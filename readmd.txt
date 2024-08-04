@@ -1,0 +1,107 @@
+def process_temperature_data(temperature):
+#     # Define threshold for fever detection
+#     fever_threshold = 38.0  # Celsius
+
+#     if temperature > fever_threshold:
+#         return "Fever detected"
+#     else:
+#         return "No fever"
+
+# # Sample function to process pulse sensor data
+# def process_pulse_data(pulse_rate):
+#     # Define normal range for pulse rate
+#     normal_pulse_range = (60, 100)  # Beats per minute
+
+#     if pulse_rate < normal_pulse_range[0] or pulse_rate > normal_pulse_range[1]:
+#         return "Abnormal pulse rate detected"
+#     else:
+#         return "Normal pulse rate"
+
+# # Sample function to process blood pressure sensor data
+# def process_blood_pressure_data(systolic, diastolic):
+#     # Define normal range for blood pressure
+#     normal_systolic_range = (90, 120)  # mmHg
+#     normal_diastolic_range = (60, 80)  # mmHg
+
+#     if systolic < normal_systolic_range[0] or systolic > normal_systolic_range[1]:
+#         return "Abnormal systolic pressure detected"
+#     elif diastolic < normal_diastolic_range[0] or diastolic > normal_diastolic_range[1]:
+#         return "Abnormal diastolic pressure detected"
+#     else:
+#         return "Normal blood pressure"
+
+
+
+arduino code
+
+#define USE_ARDUINO_INTERRUPTS true 
+#include <Adafruit_MLX90614.h>
+#include <PulseSensorPlayground.h>
+#include <HX711_ADC.h>
+
+#define DOUT_PIN  3 // Connect HX711 DOUT to Arduino pin 3
+#define CLK_PIN   2 // Connect HX711 CLK to Arduino pin 2
+
+Adafruit_MLX90614 mlx = Adafruit_MLX90614();
+PulseSensorPlayground pulseSensor;
+HX711_ADC PressureSensor(DOUT_PIN,CLK_PIN);
+
+const int PulseWire = 0;
+const int LED13 = 13;
+int Threshold = 550;
+const int relayPin = 5;
+
+
+
+void setup() {
+
+  Serial.begin(115200); // Initialize serial communication
+  pinMode(3, OUTPUT); // Set pin 3 as an output
+  pinMode(4, OUTPUT); // Set pin 4 as an output
+
+  if (!mlx.begin() and pulseSensor.begin() ) {
+      Serial.println("Error connecting to MLX sensor. Check wiring.");
+      Serial.println("Initialized PulseSensor.");
+      while (1);
+    }
+  pulseSensor.analogInput(PulseWire); 
+  pulseSensor.blinkOnPulse(LED13);
+  pulseSensor.setThreshold(Threshold);
+
+  PressureSensor.begin();
+  PressureSensor.start(2000); // Set the scale to 2000
+}
+
+void loop() {
+  if (Serial.available() > 0) { // If data is available to read
+    char command = Serial.read(); // Read the incoming byte
+    if (command == '1') {
+//        Serial.println("Received command 1");
+        float ambientTemp = mlx.readAmbientTempC();
+        float objectTemp = mlx.readObjectTempC();
+        Serial.print("MLX Temperature (°C): ");
+        Serial.print("Ambient = ");
+        Serial.print(ambientTemp);
+        Serial.print("°C\t    Object = ");
+        Serial.print(objectTemp);
+        Serial.println("°C     ");
+//        delay(1000);
+    } else if (command == '2') {
+        int heartRate = pulseSensor.getBeatsPerMinute();
+        Serial.print("Heart Rate: ");
+        Serial.print(heartRate);
+        Serial.println(" BPM");
+//        delay(1000);
+    } else if (command == '3') {
+//        digitalWrite(relayPin, LOW);
+        delay(10000);
+        float pressureValue = PressureSensor.getData();
+//         float pressureValue = random(85.55, 114);
+        Serial.print("Pressure: ");
+        Serial.print(pressureValue);
+        Serial.println(" mmHg ");
+        delay(1000); 
+        digitalWrite(relayPin, HIGH);
+    }
+  }
+}

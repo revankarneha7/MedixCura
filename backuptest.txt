@@ -1,0 +1,94 @@
+from email import header
+from operator import and_
+import cv2
+from PIL import Image
+from pytesseract import pytesseract
+import pyttsx3
+import webbrowser
+
+cam = cv2.VideoCapture(0)
+cv2.namedWindow("test")
+img_counter = 0
+
+while True:
+    ret, frame = cam.read() 
+    if not ret:
+        print("failed to grab frame")
+        break
+    cv2.imshow("test", frame)
+
+    k = cv2.waitKey(1)
+    if k%256 == 27:
+        # ESC pressed
+        print("Escape hit, closing...")
+        break
+    elif k%256 == 32:
+        # SPACE pressed
+        img_name = "opencv_frame_{}.png".format(img_counter)
+        cv2.imwrite(img_name, frame)
+        print("{} written!".format(img_name))
+        img_counter += 1 
+        break
+
+
+cam.release()
+cv2.destroyAllWindows() 
+print("\n"*2)
+ 
+path_to_tesseract = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+path_to_image = 'opencv_frame_0.png'
+pytesseract.tesseract_cmd = path_to_tesseract
+img = Image.open(path_to_image)
+text = pytesseract.image_to_string(img)
+print(text)
+print("\n"*2)
+
+index0 = text.find("Grilinctus") 
+index1 = text.find("ANTI")
+index2 = text.find("NON")
+index3 = text.find("Grillinctas")
+
+TAB20= text.find("Fexofenadine") 
+TAB21 = text.find("Hydrochloride")
+TAB22 = text.find("Montelukast")
+TAB23 = text.find("ZADONASE")
+
+TAB30 = text.find("Cefpodoxime") 
+TAB31 = text.find("OflOxacin")
+TAB32 = text.find("XONE")
+TAB33 = text.find("Blioster")
+
+if index0>=0 or index1>=0 or index2>=0 or index3>=0:
+   webbrowser.open_new_tab("htmltablet1.html")
+
+   pyobj=pyttsx3.init()
+   pyobj.say("Grilinctus...cough suppressant,relief from ,throat irritation,runny nose, watery eyes. prescription.1 tea spoon 3 to 4 times a day ")
+   pyobj.runAndWait()
+
+elif TAB20>=0 or TAB21>=0 or TAB22>=0 or TAB23>=0:
+   webbrowser.open_new_tab("htmltablet2.html")
+   pyobj=pyttsx3.init()
+   pyobj.say("zadonase...treatmet of allergy symptoms,such as ,stuffy nose,congestion,watery eyes. prescription. 1 tablet after meal")
+   pyobj.runAndWait()
+
+elif TAB30>=0 or TAB31>=0 or TAB32>=0 or TAB33>=0:
+   webbrowser.open_new_tab("htmltablet3.html")
+   pyobj=pyttsx3.init()
+   pyobj.say("xone-o...treat infections such as lungs brain ear bones skin blood . prescription. 1 tablet after dinner")
+   pyobj.runAndWait()
+
+else:
+   webbrowser.open_new_tab("htmltablet4.html")
+   pyobj=pyttsx3.init()
+   pyobj.say("tablet not found")
+   pyobj.runAndWait()
+
+
+
+
+
+
+
+
+
+

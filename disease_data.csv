@@ -1,0 +1,63 @@
+disease,symptoms
+Flu,Fever,Headache,Sore throat
+Allergy,Sneezing,Itchy eyes,Runny nose
+COVID-19,Fever,Cough,Shortness of breath,Loss of taste or smell
+Influenza,Fever,Headache,Fatigue,Muscle aches,Cough,Sore throat
+COVID-19 Delta Variant,Fever,Cough,Headache,Fatigue,Shortness of breath,Diarrhea
+Hay Fever,Sneezing,Runny or stuffy nose,Itchy eyes,Cough,Sore throat
+Gastroenteritis,Nausea or vomiting,Diarrhea,Abdominal pain,Fever
+Insect Bite,Rash,Itchy skin,Swelling,Redness
+Heartburn,Chest pain,Burning sensation in the chest,Acid reflux
+Dizziness,Dizziness,Lightheadedness,Unsteadiness
+Pneumonia,Fever,Cough,Chest pain,Shortness of breath,Fatigue
+Stomach Flu,Nausea or vomiting,Diarrhea,Abdominal pain,Fever,Headache
+Sinusitis,Headache,Runny or stuffy nose,Facial pain or pressure,Cough,Sore throat
+Migraine,Headache,Throbbing pain on one side of the head,Sensitivity to light or sound,Nausea or vomiting
+Asthma,Shortness of breath,Wheezing,Cough,Chest tightness
+COVID-19 Lambda Variant,Fever,Cough,Headache,Fatigue,Shortness of breath
+Food Poisoning,Nausea or vomiting,Diarrhea,Abdominal pain,Fever,Weakness
+Bronchitis,Cough,Shortness of breath,Chest discomfort,Fatigue,Fever
+Chickenpox,Fever,Rash,Itchy blisters,Headache,Fatigue
+Malaria,Fever,Chills,Headache,Sweating,Fatigue,Nausea,Vomiting,Muscle aches
+Dengue,Fever,Severe headache,Pain behind the eyes,Joint and muscle pain,Rash,Nausea,Vomiting
+HIV/AIDS,Fever,Fatigue,Swollen lymph nodes,Sore throat,Rash,Night sweats,Weight loss
+Hepatitis B,Fever,Fatigue,Abdominal pain,Jaundice,Dark urine,Nausea,Vomiting,Joint pain
+Diabetes,Polyuria (frequent urination),Polydipsia (excessive thirst),Polyphagia (excessive hunger),Weight loss,Fatigue,Blurred vision
+High Blood Pressure,Headache,Dizziness,Shortness of breath,Chest pain,Fatigue,Nausea,Vomiting
+Asthma,Shortness of breath,Wheezing,Cough,Chest tightness
+Lung Cancer,Cough,Shortness of breath,Chest pain,Weight loss,Fatigue,Bone pain
+Arthritis,Joint pain,Swelling,Stiffness,Redness
+Appendicitis,Abdominal pain,Nausea,Vomiting,Loss of appetite,Fever
+Atherosclerosis,Chest pain,Shortness of breath,Fatigue,Dizziness,Leg pain or cramping
+Autism,Impaired social interaction,Communication difficulties,Repetitive behaviors
+Back Pain,Lower back pain,Muscle stiffness,Radiating pain,Difficulty standing or sitting
+Bipolar Disorder,Mood swings,Depression,Elevated mood or irritability,Impulsivity
+Cancer,Unexplained weight loss,Fatigue,Persistent pain,Changes in skin,Unusual bleeding
+Chronic Fatigue Syndrome,Extreme fatigue,Memory problems,Joint pain,Muscle pain,Headaches
+Cirrhosis,Fatigue,Weakness,Loss of appetite,Nausea,Vomiting,Abdominal pain
+Cystic Fibrosis,Chronic cough,Shortness of breath,Recurrent lung infections,Poor growth
+Depression,Sadness,Loss of interest or pleasure,Changes in appetite,Sleep disturbances
+Epilepsy,Seizures,Temporary confusion,Uncontrollable jerking movements,Staring spells
+Gallstones,Abdominal pain,Nausea,Vomiting,Yellowing of the skin or eyes,Indigestion
+Gout,Severe joint pain,Swelling,Redness,Tenderness
+Hemorrhoids,Itching or irritation in the anal region,Pain or discomfort,Swelling
+Hepatitis A,Fatigue,Abdominal pain,Loss of appetite,Nausea,Vomiting,Yellowing of the skin or eyes
+Hypothyroidism,Fatigue,Weight gain,Dry skin,Constipation,Depression
+Kidney Stones,Severe pain in the side or back,Blood in urine,Frequent urination
+Leukemia,Fatigue,Weakness,Frequent infections,Easy bruising or bleeding,Swollen lymph nodes
+Lupus,Fatigue,Joint pain,Rash on the face,Butterfly-shaped rash over the cheeks and nose
+Lyme Disease,Fever,Fatigue,Headache,Rash,Joint pain
+Multiple Sclerosis,Fatigue,Numbness or weakness in limbs,Blurred or double vision,Tingling or pain
+Osteoporosis,Bone pain,Fractures with minimal trauma,Stooped posture,Loss of height
+Parkinson's Disease,Tremor,Stiffness,Slowed movement,Poor balance
+Pneumothorax,Sudden chest pain,Shortness of breath,Rapid heart rate,Cough
+Psoriasis,Red patches of skin covered with thick, silvery scales,Itching or burning sensation
+Rheumatoid Arthritis,Joint pain,Swelling,Stiffness,Fatigue,Fever
+Schizophrenia,Delusions,Hallucinations,Disorganized speech,Reduced emotional expression
+Sleep Apnea,Loud snoring,Episodes of breathing cessation during sleep,Excessive daytime sleepiness
+Stroke,Weakness or numbness of face, arm, or leg on one side of the body,Slurred speech,Trouble walking or loss of balance
+Ulcerative Colitis,Abdominal pain,Diarrhea with blood or pus,Rectal pain or bleeding,Fatigue
+Urinary Tract Infection,Frequent urination,Pain or burning during urination,Cloudy or bloody urine
+Vertigo,Dizziness,Spinning sensation,Nausea,Vomiting
+Obesity,Weight gain,Increased body fat,Difficulty losing weight,Low energy levels
+Common Cold,Runny or stuffy nose,Sneezing,Sore throat,Cough,Low-grade fever,Fatigue
